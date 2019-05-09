@@ -33,7 +33,7 @@ namespace Repositoty
 
         public ClassCurrency()
         {
-
+            
         }
         #region notused properties
         //public string HKD
@@ -262,7 +262,6 @@ namespace Repositoty
                 SetValutaValueInProperty();
             }
         }
-
         private void SetValutaValueInProperty()
         {
             decimal KRkurs = rates["DKK"];
@@ -284,6 +283,5 @@ namespace Repositoty
             //HKD = ((1 / rates["HKD"]) * KRkurs).ToString("##0.0000");
             #endregion
         }
-
     }
 }

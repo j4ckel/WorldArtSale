@@ -49,7 +49,7 @@ namespace Repositoty
                 if (value != _customerCurrencyID)
                 {
                     _customerCurrencyID = value;
-                    csv.currencyID = _customerCurrencyID;
+                    csv.currencyID = customerCurrencyID;
                     Notify("costumerCurrencyID");
                 }
             }

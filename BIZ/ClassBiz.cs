@@ -42,6 +42,8 @@ namespace BIZ
             listClassArt = new List<ClassArt>(getdata.classArt.ToList() as List<ClassArt>);
             classArt = new ClassArt();
             listCustomer = new List<ClassCustomer>(getdata.classCustomer.ToList()as List<ClassCustomer>);
+            ClassSalesValues = new ClassSalesValues();
+            listclassSalesValues = new List<ClassSalesValues>(getdata.classSalesValues.ToList() as List<ClassSalesValues>);
         }
 
         #region properties

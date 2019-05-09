@@ -58,6 +58,7 @@
     <Compile Include="EntityConfigurations\EntityConfigurationsClassCustomer.cs" />
     <Compile Include="EntityConfigurations\EntityConfigurationsClassSalesValues.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeedInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Repositoty\Repositoty.csproj">

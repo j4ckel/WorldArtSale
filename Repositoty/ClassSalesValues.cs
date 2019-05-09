@@ -197,7 +197,8 @@ namespace Repositoty
 
         #endregion
         private void CalculateAll()
-        {   
+        {
+            
             
                 decimal valutaRateOvnValuta = classCurrency.rates[Convert.ToDecimal(currencyID).ToString()];
                 decimal.TryParse(bidUSD, out decimal calckUSD);
