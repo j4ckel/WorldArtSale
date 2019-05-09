@@ -123,7 +123,7 @@ namespace BIZ
 
                 }
             }
-        }
+        } 
 
         public ClassCustomer fallbackCustomer
         {
