@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Repositoty;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -39,6 +42,21 @@ namespace ProjectIO
 
             // Return the result as a byte array.
             return content.ToArray();
+        }
+        public async Task<ObservableCollection<ZipCity>> GetZipCitySearch(string url)
+        {
+            WebRequest webReq = WebRequest.Create(url);
+            WebResponse webRes = await webReq.GetResponseAsync();
+            string jsonString;
+
+            using (Stream stream = webRes.GetResponseStream())
+            {
+                StreamReader reader = new StreamReader(stream, Encoding.UTF8);
+
+                jsonString = await reader.ReadToEndAsync();
+            }
+            ObservableCollection<ZipCity> zc = await Task.Run(() => JsonConvert.DeserializeObject<ObservableCollection<ZipCity>>(jsonString));
+            return zc;
         }
 
     }

@@ -138,8 +138,8 @@
                          Margin="3,5,3,5"
                          Grid.Row="3"
                          TextWrapping="Wrap"
-                         Text="{Binding classCustomer.zipCity}"
-                         VerticalAlignment="Stretch" />
+                         Text="{Binding ZipCity}"
+                         VerticalAlignment="Stretch" TextChanged="TextBoxZipCity_TextChanged" />
                 <TextBox x:Name="textBoxCountry" 
                          Grid.ColumnSpan="7"
                          Grid.Column="2"
@@ -193,9 +193,27 @@
                          TextWrapping="Wrap"
                          Text="{Binding classCustomer.maxBid}"
                          VerticalAlignment="Stretch" />
-            </Grid>
-        
-            <Grid x:Name="gridBotton"
+            <ListView x:Name="listViewZipCities"
+                      ItemsSource="{Binding ZipCity}"
+                      Grid.ColumnSpan="9"
+                      Grid.Column="0"
+                      Grid.Row="4"
+                      Grid.RowSpan="6"
+                      Visibility="Collapsed"
+                      MouseDoubleClick="ListViewZipCities_MouseDoubleClick">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Postnr."
+                                        Width="80"
+                                        DisplayMemberBinding="{Binding ZipCode}"/>
+                        <GridViewColumn Header="Bynavn"
+                                        Width="230"
+                                        DisplayMemberBinding="{Binding CityName}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+        <Grid x:Name="gridBotton"
                   Grid.Row="1"
                   Grid.Column="0"
                   Margin="0">

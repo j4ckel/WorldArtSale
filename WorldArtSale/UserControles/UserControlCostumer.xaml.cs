@@ -23,7 +23,7 @@ namespace WorldArtSale
     public partial class UserControlCostumer : UserControl
     {
         ClassBiz CB;
-        
+        RegEx ex = new RegEx();
         public UserControlCostumer(ClassBiz inCB)
         {
             InitializeComponent();
@@ -124,6 +124,31 @@ namespace WorldArtSale
         {
             CloseAllTextBoxForEdit();
             CB.classCustomer = CB.fallbackCustomer;
+        }
+
+        private void ListViewZipCities_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            ListView lv = (ListView)sender;
+            ZipCity zipCity = (ZipCity)lv.SelectedItem;
+            textBoxZipCity.Text = zipCity.ToString();
+
+            lv.Visibility = Visibility.Collapsed;
+
+
+        }
+
+        private async void TextBoxZipCity_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            if(ex.checkzipcity(tb.Text)|| string.IsNullOrEmpty(tb.Text))
+            {
+                listViewZipCities.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                await CB.SearchZipCity(tb.Text);
+                listViewZipCities.Visibility = Visibility.Visible;
+            }
         }
     }
 }

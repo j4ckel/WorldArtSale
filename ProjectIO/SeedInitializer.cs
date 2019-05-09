@@ -13,6 +13,8 @@ namespace ProjectIO
         IList<ClassArt> classArts = new List<ClassArt>();
         public SeedInitializer()
         {
+            // putter værdier i db
+
             classArts.Add(new ClassArt() { picturePath = @"C:\skole\skole\S3\eksamen s3\WorldArtSale\Image\dsb1.jpg"
                                           ,pictureDescription = "noget med et tog"
                                           ,pictureTitel = "DSB 100 AAR"});

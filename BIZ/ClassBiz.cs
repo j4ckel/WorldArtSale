@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using System.Data.Entity.Validation;
 using System.Windows;
 using System.Data.Entity.Migrations;
+using System.Collections.ObjectModel;
 
 namespace BIZ
 {
@@ -27,7 +28,7 @@ namespace BIZ
         private ClassCustomer _fallBackCustomer;
         private List<ClassSalesValues> _listclassSalesValues;
         private ClassSalesValues _ClassSalesValues;
-        private ZipCity _zipCity;
+        private ObservableCollection<ZipCity> _zipCity;
         public ClassBiz()
         {            
             classCurrency = new ClassCurrency();
@@ -155,7 +156,7 @@ namespace BIZ
         }
         
 
-        public ZipCity zipCity
+        public ObservableCollection<ZipCity> zipCity
         {
             get { return _zipCity; }
             set
@@ -184,19 +185,11 @@ namespace BIZ
             }
             
         }
-        public async Task startzipcityapicall()
+        public async Task SearchZipCity(string search)
         {
-            while (runUpdate)
-            {
-                
-                byte[] urlcontents = await classCallWebAPI.GetURLContentsAsync(@"https://localhost:44344/api/zip/search/");
-
-                string strjson = System.Text.Encoding.UTF8.GetString(urlcontents);
-
-                zipCity = JsonConvert.DeserializeObject<ZipCity>(strjson);
-                await Task.Delay(60000);
-            }
+            zipCity = await classCallWebAPI.GetZipCitySearch($@"https://localhost:44344/api/zip/search/{search}");
         }
+      
        
         private void GetAllCurrencyIdAndNames()
         {

@@ -61,7 +61,7 @@ namespace WorldArtSale
         private async void StartJasonUpdate(object sender, RoutedEventArgs e)
         {
             await CB.StartCurrencyApiCall();
-            await CB.startzipcityapicall();
+            
         }
 
         private void Window_LayoutUpdated(object sender, EventArgs e)

@@ -6,56 +6,14 @@ using System.Threading.Tasks;
 
 namespace Repositoty
 {
-    public class ZipCity :ClassNotify
+    public class ZipCity 
     {
-        public ZipCity()
+        public string ZipCode { get; set; }
+        public string CityName { get; set; }
+
+        public override string ToString()
         {
-            
-        }
-        private string _zipcode;
-        private string _CityName;
-        private Dictionary<string,string> _ZipCityIdName;
-
-        public Dictionary<string,string> ZipCityIdName
-        {
-            get { return _ZipCityIdName; }
-            set
-            {
-                if (value != _ZipCityIdName)
-                {
-                    _ZipCityIdName = value;
-                    Notify("ZipCityIdName");
-
-                }
-            }
-        }
-
-        public string Cityname
-        {
-            get { return _CityName; }
-            set
-            {
-                if (value != _CityName)
-                {
-                    _CityName = value;
-                    Notify("Cityname");
-
-                }
-            }
-        }
-
-        public string zipcode
-        {
-            get { return _zipcode; }
-            set
-            {
-                if (value != _zipcode)
-                {
-                    _zipcode = value;
-                    Notify("zipcode");
-
-                }
-            }
+            return $"{ZipCode} {CityName}";
         }
 
     }

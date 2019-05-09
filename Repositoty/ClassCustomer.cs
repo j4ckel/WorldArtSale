@@ -27,7 +27,8 @@ namespace Repositoty
         {
             
         }
-          [Key]
+        #region properties
+        [Key]
         public int customerId
         {
             get { return _CustomerId; }
@@ -143,5 +144,6 @@ namespace Repositoty
                 }
             }
         }
+        #endregion
     }
 }
