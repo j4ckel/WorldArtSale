@@ -1,0 +1,205 @@
+﻿<UserControl x:Class="WorldArtSale.UserControlExchangerates"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WorldArtSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="1000">
+    <Grid x:Name="MainGrid" Background="LightGray" ShowGridLines="False" >
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        
+        
+        <Label Content="DKK ="
+               Grid.Column="0"
+               Grid.Row="2" />
+        <Label x:Name="labelDKK"
+               Grid.Column="1"
+               Grid.Row="2"
+               Content="{Binding classCurrency.DKK}"
+               FontFamily="Lucida Console"
+               HorizontalContentAlignment="Left"
+               Margin="5,5,5,5" />
+        <Label Content="USD ="
+               Grid.Column="0"
+               ToolTip="Prisen for 1 US Dollar i Danske kroner."
+               Grid.Row="0" />
+        <Label x:Name="labelUSD"
+               Grid.Column="1"
+               Grid.Row="0"
+               Content="{Binding classCurrency.USD}"
+               FontFamily="Lucida Console"
+               HorizontalContentAlignment="Left"
+               Margin="5,5,5,5"/>
+        <Label Content="EUR ="
+               Grid.Column="0"
+               ToolTip="Prisen for 1 Rusisk Rubel i Danske kroner."
+               Grid.Row="1" />
+        <Label x:Name="labelEUR"
+               Grid.Column="1"
+               Grid.Row="1"
+               Content="{Binding classCurrency.EUR}"
+               FontFamily="Lucida Console"
+               HorizontalContentAlignment="Left"
+               Margin="5,5,5,5" />
+        <!--<Label Content="RUB ="
+               Grid.Column="0"
+               Grid.Row="2" />
+        <Label x:Name="labelRUB"
+               Grid.Column="1"
+               Grid.Row="2"
+               Content="{Binding classCurrency.RUB}"
+               FontFamily="Lucida Console"
+               HorizontalContentAlignment="Left"
+               Margin="5,5,5,5" />-->
+        <!--<Label Content="KWD ="
+               Grid.Column="2"
+               ToolTip="Prisen for 1 Kuwatisk Dinar i Danske kroner."
+               Grid.Row="0" />
+        <Label x:Name="labelKWD"
+               Grid.Column="3"
+               Grid.Row="0"
+               Content="{Binding classCurrency.KWD}"
+               FontFamily="Lucida Console"
+               HorizontalContentAlignment="Left"
+               Margin="5,5,5,5" />
+        <Label Content="BHD ="
+               Grid.Column="2"
+               ToolTip="Prisen for 1 Bahrainsk Dinar i Danske kroner."
+               Grid.Row="1" />
+        <Label x:Name="labelBHD"
+               Grid.Column="3"
+               Grid.Row="1"
+               Content="{Binding classCurrency.BHD}"
+               FontFamily="Lucida Console"
+               HorizontalContentAlignment="Left"
+               Margin="5,5,5,5" />
+        <Label Content="OMR ="
+               Grid.Column="2"
+               ToolTip="Prisen for 1 Omansk Rial i Danske kroner."
+               Grid.Row="2" />
+        <Label x:Name="labelOMR"
+               Grid.Column="3"
+               Grid.Row="2"
+               Content="{Binding classCurrency.OMR}"
+               FontFamily="Lucida Console"
+               HorizontalContentAlignment="Left"
+               Margin="5,5,5,5" />
+        <Label Content="JOD ="
+               Grid.Column="4"
+               ToolTip="Prisen for 1 Jordansk Dinar i Danske kroner."
+               Grid.Row="0" />
+        <Label x:Name="labelJOD"
+               Grid.Column="5"
+               Grid.Row="0"
+               Content="{Binding classCurrency.JOD}"
+               FontFamily="Lucida Console"
+               HorizontalContentAlignment="Left"
+               Margin="5,5,5,5" />
+        <Label Content="GBP ="
+               Grid.Column="4"
+               ToolTip="Prisen for 1 Britisk Pund i Danske kroner."
+               Grid.Row="1" />
+        <Label x:Name="labelGBP"
+               Grid.Column="5"
+               Grid.Row="1"
+               Content="{Binding classCurrency.GBP}"
+               FontFamily="Lucida Console"
+               HorizontalContentAlignment="Left"
+               Margin="5,5,5,5" />
+        <Label Content="KYD ="
+               Grid.Column="4"
+               ToolTip="Prisen for 1 Cayman Islands Dollar i Danske kroner."
+               Grid.Row="2" />
+        <Label x:Name="labelKYD"
+               Grid.Column="5"
+               Grid.Row="2"
+               Content="{Binding classCurrency.KYD}"
+               FontFamily="Lucida Console"
+               HorizontalContentAlignment="Left"
+               Margin="5,5,5,5" />
+        <Label Content="CHF ="
+               Grid.Column="6"
+               ToolTip="Prisen for 1  Schweizisk Franc. i Danske kroner."
+               Grid.Row="0" />
+        <Label x:Name="labelCHF"
+               Grid.Column="7"
+               Grid.Row="0"
+               Content="{Binding classCurrency.CHF}"
+               FontFamily="Lucida Console"
+               HorizontalContentAlignment="Left"
+               Margin="5,5,5,5" />
+        <Label Content="CAD ="
+               Grid.Column="6"
+               ToolTip="Prisen for 1 Canadisk Dollar i Danske kroner."
+               Grid.Row="1" />
+        <Label x:Name="labelCAD"
+               Grid.Column="7"
+               Grid.Row="1"
+               Content="{Binding classCurrency.CAD}"
+               FontFamily="Lucida Console"
+               HorizontalContentAlignment="Left"
+               Margin="5,5,5,5" />
+        <Label Content="AUD ="
+               Grid.Column="6"
+               ToolTip="Prisen for 1 Australsk Dollar i Danske kroner."
+               Grid.Row="2" />
+        <Label x:Name="labelAUD"
+               Grid.Column="7"
+               Grid.Row="2"
+               Content="{Binding classCurrency.AUD}"
+               FontFamily="Lucida Console"
+               HorizontalContentAlignment="Left"
+               Margin="5,5,5,5" />
+        <Label Content="AZN ="
+               Grid.Column="8"
+               ToolTip="Prisen for 1 Aserbajdsjansk Manat i Danske kroner."
+               Grid.Row="0" />
+        <Label x:Name="labelAZN"
+               Grid.Column="9"
+               Grid.Row="0"
+               Content="{Binding classCurrency.AZN}"
+               FontFamily="Lucida Console"
+               HorizontalContentAlignment="Left"
+               Margin="5,5,5,5" />
+        <Label Content="BRL ="
+               Grid.Column="8"
+               ToolTip="Prisen for 1 Brasilianske Real i Danske kroner."
+               Grid.Row="1" />
+        <Label x:Name="labelBRL"
+               Grid.Column="9"
+               Grid.Row="1"
+               Content="{Binding classCurrency.BRL}"
+               FontFamily="Lucida Console"
+               HorizontalContentAlignment="Left"
+               Margin="5,5,5,5" />
+        <Label Content="HKD ="
+               Grid.Column="8"
+               ToolTip="Prisen for 1 Hongkong Dollar i Danske kroner."
+               Grid.Row="2" />
+        <Label x:Name="labelHKD"
+               Grid.Column="9"
+               Grid.Row="2"
+               Content="{Binding classCurrency.HKD}"
+               FontFamily="Lucida Console"
+               HorizontalContentAlignment="Left"
+               Margin="5,5,5,5" />-->
+    </Grid>
+</UserControl>
